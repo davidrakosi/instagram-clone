@@ -3,8 +3,9 @@ import './Post.css'
 import Avatar from '@material-ui/core/Avatar'
 import { db } from '../firebase'
 import firebase from 'firebase'
+import moment from 'moment'
 
-function Post({ postId, user, username, imageUrl, caption }) {
+function Post({ date, postId, user, username, imageUrl, caption }) {
     const [comments, setComments] = useState([])
     const [comment, setComment] = useState('')
 
@@ -19,7 +20,6 @@ function Post({ postId, user, username, imageUrl, caption }) {
                 .orderBy('timestamp', 'desc')
                 .onSnapshot((snapshot) => {
                     setComments(snapshot.docs.map((doc) => doc.data()))
-                    console.log(comments)
                 })
         }
 
@@ -57,9 +57,13 @@ function Post({ postId, user, username, imageUrl, caption }) {
             <div className="post__comments">
                 {comments.map((comment)=>(
                     <p>
-                        <strong>{comment.username}</strong> {comment.text}
+                        <strong>{comment.username}</strong> {comment.text}<time className= 'post__comment_time'>{moment(comment.timestamp?.toDate()).fromNow()}</time>
                     </p>
                 ))}
+            </div>
+
+            <div className= 'post__moment'>
+                <time>{moment(date?.toDate()).fromNow()}</time>
             </div>
 
             <form className='post__commentBox'>
@@ -72,8 +76,7 @@ function Post({ postId, user, username, imageUrl, caption }) {
                 />
                 <button
                     className='post__button '
-                    disabled={!comment}
-                    disabled={!user}
+                    disabled={!comment || !user}
                     type='submit'
                     onClick={postComment}>Post</button>
             </form>
