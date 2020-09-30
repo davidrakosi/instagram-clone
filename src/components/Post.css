@@ -50,6 +50,7 @@
     padding: 10px;
     border: none;
     border-top: 1px solid lightgrey;
+    cursor: auto;
 }
 
 .post__button {
@@ -59,5 +60,23 @@
     border-top: 1px solid lightgrey;
     color: #6082a3;
     background-color: transparent;
+}
+
+.post__moment {
+    font-size: 10px;
+    font-weight: 100;
+    margin-bottom: 5px;
+    color: #8e8e8e;
+    text-transform: uppercase;
+    padding-left: 20px;
+}
+
+.post__comment_time {
+    float: right;
+    font-size: 10px;
+    font-weight: 100;
+    margin-bottom: 5px;
+    color: #8e8e8e;
+    text-transform: uppercase;
 }
 
