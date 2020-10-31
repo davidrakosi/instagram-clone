@@ -4,6 +4,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### 'npm install'
+
+Installs the node module dependencies.
+
+### 'npm install firebase'
+
+Installs firebase.
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
