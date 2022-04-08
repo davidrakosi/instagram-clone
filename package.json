@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "firebase-tools": "^8.6.0",
+    "firebase-tools": "^9.4.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-instagram-embed": "^1.5.0",
